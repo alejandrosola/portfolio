@@ -14,7 +14,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 import { useRouter } from 'next/navigation'
-import { Typography } from '@mui/material';
+import Text from './Text';
 
 export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
     const router = useRouter();
@@ -60,7 +60,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
                                 <ListItemIcon className='light-text'>
                                     {item.icon}
                                 </ListItemIcon>
-                                <Typography className="dark-text"> {item.name} </Typography>
+                                <Text variant="body1" color="secondary"> {item.name} </Text>
                             </ListItemButton>
                         </ListItem>
                         ))}
