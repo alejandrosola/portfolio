@@ -1,10 +1,9 @@
-import NavBar from "@/components/NavBar";
-import Image from "next/image";
+import { Typography } from "@mui/material";
 
 export default function Home() {
   return (
     <main>
-      Jola
+      Hola mundo!
     </main>
   );
 }

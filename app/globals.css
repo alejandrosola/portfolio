@@ -7,7 +7,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --primary-color: #27374D;
-  --text-color: #DDE6ED;
+  --light-text-color: #DDE6ED;
+  --dark-text-color: #27374D;
 }
 
 .main_navbar {
@@ -19,8 +20,13 @@
   gap: 5%;
 }
 
-.text {
-  color: var(--text-color) !important;
+.light-text {
+  color: var(--light-text-color) !important;
+  font-family: 'Courier Prime', monospace !important;
+}
+
+.dark-text {
+  color: var(--dark-text-color) !important;
   font-family: 'Courier Prime', monospace !important;
 }
 
