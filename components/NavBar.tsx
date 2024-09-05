@@ -14,6 +14,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 import { useRouter } from 'next/navigation'
+import { Typography } from '@mui/material';
 
 export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
     const router = useRouter();
@@ -50,7 +51,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
                     flexDirection: 'column',
                     alignItems: 'center', }} className="main_navbar light-text">
                     <div>
-                        <img className="profile_img" src="/spiderman.jpg" alt="Spiderman" />
+                        <img className="profile-img" src="/spiderman.jpg" alt="Spiderman" />
                     </div>
                     <List>
                         {items.map((item, _index) => (
@@ -59,7 +60,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
                                 <ListItemIcon className='light-text'>
                                     {item.icon}
                                 </ListItemIcon>
-                                {item.name}
+                                <Typography className="dark-text"> {item.name} </Typography>
                             </ListItemButton>
                         </ListItem>
                         ))}

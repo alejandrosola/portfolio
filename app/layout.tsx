@@ -19,24 +19,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-      <div style={{ display: 'flex' }}>
-        <Box
-          component="nav"
-          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-          aria-label="mailbox folders"
-        >
-          <NavBar drawerWidth={drawerWidth} />
-        </Box>
-        <Box
-        component="nav"
-        sx={{ flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-        >
-          {children}
-        </Box>
-      </div>
-        
-        
+        <div style={{ display: 'grid', gridTemplateColumns: `${drawerWidth}px 1fr`, height: '100vh' }}>
+          <Box
+            component="nav"
+            sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+            aria-label="mailbox folders"
+          >
+            <NavBar drawerWidth={drawerWidth} />
+          </Box>
+          <Box className="principal-container">
+            {children}
+          </Box>
+        </div>
       </body>
     </html>
   );

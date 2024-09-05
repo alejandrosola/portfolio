@@ -30,7 +30,27 @@
   font-family: 'Courier Prime', monospace !important;
 }
 
-.profile_img {
+.justify-text {
+  margin: 5%;
+  text-align: justify;
+}
+
+h1 {
+  font-size: 4rem !important;
+}
+
+h2 {
+  font-size: 3rem !important;
+}
+
+.principal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-img {
   object-fit: cover;
   width: 200px;
   height: 200px;
