@@ -33,7 +33,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
     {
       name: "Contacto",
       icon: <AccountBoxIcon />,
-      handleClick: () => openLink("contacto.com"),
+      handleClick: () => redirectTo("/contact"),
     },
     {
       name: "Formación",
@@ -76,7 +76,12 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
           className="main_navbar light-text"
         >
           <div>
-            <img className="profile-img" src="/spiderman.jpg" alt="Spiderman" />
+            <img
+              onClick={() => redirectTo("/")}
+              className="profile-img"
+              src="/profile.jpg"
+              alt="Profile picture"
+            />
           </div>
           <List>
             {items.map((item, _index) => (

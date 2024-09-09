@@ -52,6 +52,7 @@ h2 {
 }
 
 .profile-img {
+  cursor: pointer;
   object-fit: cover;
   width: 200px;
   height: 200px;
