@@ -6,9 +6,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --primary-color: #27374D;
-  --light-text-color: #DDE6ED;
-  --dark-text-color: #27374D;
+  --primary-color: #16423c;
+  --secondary-color: #e9efec;
+  --light-text-color: #c4dad2;
+  --dark-text-color: #16423c;
 }
 
 .main_navbar {
@@ -22,12 +23,12 @@
 
 .light-text {
   color: var(--light-text-color) !important;
-  font-family: 'Courier Prime', monospace !important;
+  font-family: "Courier Prime", monospace !important;
 }
 
 .dark-text {
   color: var(--dark-text-color) !important;
-  font-family: 'Courier Prime', monospace !important;
+  font-family: "Courier Prime", monospace !important;
 }
 
 .justify-text {
@@ -69,7 +70,7 @@ h2 {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #DDE6ED;
+  background: var(--secondary-color);
 }
 
 @layer utilities {

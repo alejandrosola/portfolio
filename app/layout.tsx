@@ -7,7 +7,7 @@ import { Box } from "@mui/material";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Alejandro Solá"
+  title: "Alejandro Solá",
 };
 
 export default function RootLayout({
@@ -19,7 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div style={{ display: 'grid', gridTemplateColumns: `${drawerWidth}px 1fr`, height: '100vh' }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: `${drawerWidth}px 1fr`,
+            height: "100vh",
+          }}
+        >
           <Box
             component="nav"
             sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -27,9 +33,7 @@ export default function RootLayout({
           >
             <NavBar drawerWidth={drawerWidth} />
           </Box>
-          <Box className="principal-container">
-            {children}
-          </Box>
+          <Box className="principal-container">{children}</Box>
         </div>
       </body>
     </html>

@@ -1,17 +1,10 @@
-import { promises as fs } from 'fs';
+import { promises as fs } from "fs";
 
 interface Props {
-    filename: string
+  filename: string;
 }
 
 export default async function TextFile({ filename }: Props) {
-
-    const file = await fs.readFile(process.cwd() + filename, 'utf8');
-
-    return (
-        <>
-            {file}
-        </>
-    )
-
+  const file = await fs.readFile(process.cwd() + filename, "utf8");
+  return <>{file}</>;
 }
