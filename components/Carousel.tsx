@@ -1,6 +1,7 @@
 "use client";
 
 import Slider from "react-material-ui-carousel";
+import Card from "./Card";
 import Text from "./Text";
 
 interface CarouselProps {
@@ -10,12 +11,24 @@ interface CarouselProps {
 export default function Carousel({ cards = [] }: CarouselProps) {
   return (
     <>
-      <Slider className="slider-container" autoPlay={false} animation="slide">
+      <Slider
+        className="slider-container"
+        autoPlay={false}
+        animation="slide"
+        fullHeightHover
+        sx={{ height: "50%", width: "50%", justifyItems: "center" }}
+      >
         {cards.map((card, index) => (
           <div key={index} className="slider-item">
-            <Text variant="h2">{card.title}</Text>
-            <Text variant="h5">{card.subtitle}</Text>
-            <Text variant="h6">{card.body}</Text>
+            <Card
+              title={card.title}
+              subtitle={card.subtitle}
+              imgPath={card.imgPath}
+            >
+              <div>
+                <Text variant="h6">{card.body}</Text>
+              </div>
+            </Card>
           </div>
         ))}
       </Slider>
