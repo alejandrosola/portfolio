@@ -6,14 +6,18 @@ import Text from "./Text";
 
 interface CarouselProps {
   cards: any[];
+  autoplay?: boolean;
 }
 
-export default function Carousel({ cards = [] }: CarouselProps) {
+export default function Carousel({
+  cards = [],
+  autoplay = false,
+}: CarouselProps) {
   return (
     <>
       <Slider
         className="slider-container"
-        autoPlay={false}
+        autoPlay={autoplay}
         animation="slide"
         fullHeightHover
         sx={{ height: "50%", width: "50%", justifyItems: "center" }}

@@ -25,6 +25,7 @@ export default function Text({
   return (
     <>
       <Typography
+        fontFamily={"Ubuntu Mono"}
         className={justify ? "justify-text" : ""}
         variant={variant}
         color={mappedColors[color]}

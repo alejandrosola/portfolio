@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <main>
       <div style={{ margin: "5%" }}>
-        <Text variant="h1">Formación.</Text>
+        <Text variant="h1">Formación</Text>
       </div>
       <div
         style={{

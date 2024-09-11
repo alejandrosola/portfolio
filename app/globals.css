@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
   --primary-color: #16423c;
   --secondary-color: #e9efec;
+  --dark-color: #c4dad2;
   --light-text-color: #c4dad2;
   --dark-text-color: #16423c;
 }
@@ -70,6 +71,15 @@ h2 {
   width: auto;
   height: 100px !important;
   object-fit: fill;
+}
+
+.card-container {
+  background-color: var(--dark-color);
+  border-radius: 25px;
+}
+
+.slider-container {
+  border-radius: 25px;
 }
 
 main {
