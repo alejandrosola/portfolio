@@ -6,6 +6,7 @@ interface CardProps {
   title: string;
   subtitle?: string;
   children: any;
+  height?: string;
 }
 
 export default function Card({
@@ -13,9 +14,10 @@ export default function Card({
   title,
   subtitle,
   children,
+  height = "450px"
 }: CardProps) {
   return (
-    <MuiCard>
+    <MuiCard style={{height: height}} className="card-container">
       <div style={{ margin: "6%" }}>
         <Text variant="h2">{title}</Text>
         <Text variant="h5">{subtitle}</Text>
