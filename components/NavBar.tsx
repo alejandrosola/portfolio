@@ -15,9 +15,23 @@ import SchoolIcon from "@mui/icons-material/School";
 import WorkIcon from "@mui/icons-material/Work";
 import { useRouter } from "next/navigation";
 import Text from "./Text";
+import {
+  AppBar,
+  IconButton,
+  Toolbar,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
   const router = useRouter();
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+
   const items = [
     {
       name: "LinkedIn",
@@ -53,18 +67,22 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
 
   function redirectTo(path: string): any {
     router.push(path, { scroll: false });
+    setDrawerOpen(false);
   }
+  const handleDrawerToggle = () => {
+    setDrawerOpen(!drawerOpen);
+  };
 
-  return (
+  const desktopNavBar = (
     <Box>
       <CssBaseline />
       <Drawer
-        variant="permanent"
+        open={drawerOpen}
+        variant={isMobile ? "temporary" : "permanent"}
         sx={{
-          display: { xs: "none", sm: "block" },
+          display: { xs: "block", sm: "block" },
           "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
         }}
-        open
       >
         <Box
           sx={{
@@ -77,6 +95,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
         >
           <div>
             <img
+              style={{ marginTop: isMobile ? "35%" : "15%" }}
               onClick={() => redirectTo("/")}
               className="profile-img"
               src="/profile.jpg"
@@ -102,4 +121,39 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
       </Drawer>
     </Box>
   );
+
+  const mobileNavBar = (
+    <>
+      <AppBar
+        className="mobile_navbar light-text"
+        position="relative"
+        sx={{ zIndex: theme.zIndex.drawer + 1 }}
+      >
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <IconButton
+            color="inherit"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Box
+            sx={{
+              position: "absolute",
+              left: "50%",
+              transform: "translateX(-50%)",
+            }}
+          >
+            <Text variant="h6" color="secondary">
+              Alejandro Solá
+            </Text>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      {desktopNavBar}
+    </>
+  );
+
+  return <Box>{isMobile ? mobileNavBar : desktopNavBar}</Box>;
 }

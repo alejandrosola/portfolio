@@ -18,6 +18,10 @@
   height: 100vh;
 }
 
+.mobile_navbar {
+  background-color: var(--primary-color) !important;
+}
+
 .drawer_items {
   gap: 5%;
 }
