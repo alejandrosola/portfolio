@@ -19,10 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div
-          style={{
+        <Box
+          sx={{
             display: "grid",
-            gridTemplateColumns: `${drawerWidth}px 1fr`,
+            gridTemplateColumns: { sm: `${drawerWidth}px 1fr` },
             height: "100vh",
           }}
         >
@@ -34,7 +34,7 @@ export default function RootLayout({
             <NavBar drawerWidth={drawerWidth} />
           </Box>
           <Box className="principal-container">{children}</Box>
-        </div>
+        </Box>
       </body>
     </html>
   );
