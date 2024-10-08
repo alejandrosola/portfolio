@@ -1,5 +1,4 @@
 import Text from "@/components/Text";
-import TextFile from "@/components/TextFile";
 
 export default function Home() {
   return (
@@ -10,9 +9,9 @@ export default function Home() {
         </div>
 
         <Text variant="h4"> Hola! Soy Alejandro Solá </Text>
-
         <Text variant="h6" justify={true}>
-          <TextFile filename="/public/description.txt" />
+          Descripción
+          {/* <TextFile filename="/public/description.txt" /> */}
         </Text>
       </div>
     </main>

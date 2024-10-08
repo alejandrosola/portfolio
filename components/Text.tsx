@@ -1,3 +1,4 @@
+import colors from "@/app/utils/colors";
 import { Typography } from "@mui/material";
 
 interface TextProps {
@@ -6,15 +7,6 @@ interface TextProps {
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body1";
   justify?: boolean;
 }
-
-const mappedColors = {
-  primary: "#16423C",
-  secondary: "#E9EFEC",
-  success: "#6A9C89",
-  error: "red",
-  info: "yellow",
-  warning: "orange",
-};
 
 export default function Text({
   justify = false,
@@ -28,7 +20,7 @@ export default function Text({
         fontFamily={"Ubuntu Mono"}
         className={justify ? "justify-text" : ""}
         variant={variant}
-        color={mappedColors[color]}
+        color={colors[color]}
         gutterBottom
       >
         {children}
