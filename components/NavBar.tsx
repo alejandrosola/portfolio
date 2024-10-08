@@ -23,6 +23,7 @@ import {
   useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import Button from "./Button";
 
 export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
   const router = useRouter();
@@ -146,7 +147,9 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
             }}
           >
             <Text variant="h6" color="secondary">
-              Alejandro Solá
+              <Button onClick={() => redirectTo("/")} variant="text">
+                Alejandro Solá
+              </Button>
             </Text>
           </Box>
         </Toolbar>

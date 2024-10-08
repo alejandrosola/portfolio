@@ -24,6 +24,7 @@
 
 .button {
   border-radius: 15%;
+  color: var(--light-text-color) !important;
 }
 
 .drawer_items {
