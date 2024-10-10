@@ -48,7 +48,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
     {
       name: "Contacto",
       icon: <AccountBoxIcon />,
-      handleClick: () => redirectTo("/contact"),
+      handleClick: () => redirectTo("/#contact"),
     },
     {
       name: "Formación",
@@ -67,7 +67,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
   }
 
   function redirectTo(path: string): any {
-    router.push(path, { scroll: false });
+    router.push(path);
     setDrawerOpen(false);
   }
   const handleDrawerToggle = () => {
