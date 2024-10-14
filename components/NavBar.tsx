@@ -80,6 +80,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
       <Drawer
         open={drawerOpen}
         variant={isMobile ? "temporary" : "permanent"}
+        onClose={handleDrawerToggle}
         sx={{
           display: { xs: "block", sm: "block" },
           "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },

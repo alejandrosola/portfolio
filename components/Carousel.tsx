@@ -21,10 +21,10 @@ export default function Carousel({
   return (
     <>
       <Slider
-        className="slider-container"
         autoPlay={autoplay}
         animation="slide"
         fullHeightHover
+        navButtonsAlwaysVisible
         sx={{
           height: "50%",
           width: { md: "50%", xs: "90%" },

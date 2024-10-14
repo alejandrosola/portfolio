@@ -20,6 +20,7 @@
 
 .mobile_navbar {
   background-color: var(--primary-color) !important;
+  position: fixed;
 }
 
 .button {
@@ -84,10 +85,6 @@ h2 {
 
 .card-container {
   background-color: var(--dark-color);
-  border-radius: 25px;
-}
-
-.slider-container {
   border-radius: 25px;
 }
 
