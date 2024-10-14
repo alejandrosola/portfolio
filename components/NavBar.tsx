@@ -53,7 +53,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
     {
       name: "Formación",
       icon: <SchoolIcon />,
-      handleClick: () => redirectTo("/education"),
+      handleClick: () => redirectTo("/#education"),
     },
     {
       name: "Experiencia",
@@ -67,7 +67,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
   }
 
   function redirectTo(path: string): any {
-    router.push(path, { scroll: false });
+    router.push(path);
     setDrawerOpen(false);
   }
   const handleDrawerToggle = () => {
