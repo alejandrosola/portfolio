@@ -20,6 +20,7 @@
 
 .mobile_navbar {
   background-color: var(--primary-color) !important;
+  position: fixed;
 }
 
 .button {
@@ -87,8 +88,10 @@ h2 {
   border-radius: 25px;
 }
 
-.slider-container {
-  border-radius: 25px;
+.divider {
+  margin-top: 9%;
+  border: 2px solid var(--dark-color);
+  border-radius: 2px;
 }
 
 main {

@@ -35,6 +35,21 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
 
   const items = [
     {
+      name: "Formación",
+      icon: <SchoolIcon />,
+      handleClick: () => redirectTo("/#education"),
+    },
+    {
+      name: "Experiencia",
+      icon: <WorkIcon />,
+      handleClick: () => redirectTo("/#experience"),
+    },
+    {
+      name: "Contacto",
+      icon: <AccountBoxIcon />,
+      handleClick: () => redirectTo("/#contact"),
+    },
+    {
       name: "LinkedIn",
       icon: <LinkedInIcon />,
       handleClick: () =>
@@ -44,21 +59,6 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
       name: "Github",
       icon: <GitHubIcon />,
       handleClick: () => openLink("https://github.com/alejandrosola"),
-    },
-    {
-      name: "Contacto",
-      icon: <AccountBoxIcon />,
-      handleClick: () => redirectTo("/#contact"),
-    },
-    {
-      name: "Formación",
-      icon: <SchoolIcon />,
-      handleClick: () => redirectTo("/education"),
-    },
-    {
-      name: "Experiencia",
-      icon: <WorkIcon />,
-      handleClick: () => redirectTo("/experience"),
     },
   ];
 
@@ -80,6 +80,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
       <Drawer
         open={drawerOpen}
         variant={isMobile ? "temporary" : "permanent"}
+        onClose={handleDrawerToggle}
         sx={{
           display: { xs: "block", sm: "block" },
           "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
