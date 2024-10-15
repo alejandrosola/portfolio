@@ -30,6 +30,28 @@ export default function Home() {
     },
   ];
 
+  const experiences = [
+    {
+      title: "Mapa Interactivo Cultural",
+      subtitle: "Pasantía remunerada - CAMAD",
+      body: "Pasantía de una aplicación de blablabla",
+      imgPath: "/cs50.png",
+    },
+    {
+      title: "Auxiliar alumno",
+      subtitle:
+        "Programación Orientada a Objetos - Licenciatura en informática",
+      body: "Auxiliar en la materia blablabla",
+      imgPath: "/unpsjb.png",
+    },
+    {
+      title: "CVA Magazine",
+      subtitle: "Desarrollador Fullstack",
+      body: "Desarrollador fullstack de una página web con Flask, Vue y MongoDB",
+      imgPath: "/unpsjb.png",
+    },
+  ];
+
   return (
     <main>
       <div style={{ margin: "3%" }}>
@@ -52,6 +74,18 @@ export default function Home() {
           }}
         >
           <Carousel cards={educations} />
+        </div>
+
+        <div id="experience" style={{ margin: "5%" }}>
+          <Text variant="h1">Experiencia</Text>
+        </div>
+        <div
+          style={{
+            justifyContent: "center",
+            display: "flex",
+          }}
+        >
+          <Carousel cards={experiences} />
         </div>
       </div>
     </main>
