@@ -3,6 +3,8 @@ import Text from "@/components/Text";
 import TextFile from "@/components/TextFile";
 import EmailForm from "@/components/EmailForm";
 import DividerLine from "@/components/DividerLine";
+import SchoolIcon from "@mui/icons-material/School";
+import { Box } from "@mui/material";
 
 export default function Home() {
   const educations = [
@@ -54,6 +56,13 @@ export default function Home() {
     },
   ];
 
+  const knowledge = [
+    <SchoolIcon />,
+    <SchoolIcon />,
+    <SchoolIcon />,
+    <SchoolIcon />,
+  ];
+
   const descriptionSection = (
     <>
       <div style={{ marginTop: "2%" }}>
@@ -68,7 +77,7 @@ export default function Home() {
 
   const educationSection = (
     <>
-      <div id="education" style={{ margin: "5%" }}>
+      <div id="education">
         <Text variant="h2">Formación</Text>
       </div>
       <div
@@ -84,7 +93,7 @@ export default function Home() {
 
   const experienceSection = (
     <>
-      <div id="experience" style={{ margin: "5%" }}>
+      <div id="experience">
         <Text variant="h2">Experiencia</Text>
       </div>
       <div
@@ -108,6 +117,19 @@ export default function Home() {
     </>
   );
 
+  const knowledgeSection = (
+    <>
+      <div id="contact">
+        <Text variant="h2">Conocimientos</Text>
+        <Box style={{ display: "flex", justifyContent: "center", gap: "5%" }}>
+          {knowledge.map((item) => (
+            <Box className="icon-item">{item}</Box>
+          ))}
+        </Box>
+      </div>
+    </>
+  );
+
   return (
     <main>
       <div style={{ margin: "3%" }}>
@@ -120,6 +142,10 @@ export default function Home() {
         <DividerLine />
 
         {experienceSection}
+
+        <DividerLine />
+
+        {knowledgeSection}
 
         <DividerLine />
 
