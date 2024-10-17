@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -26,12 +26,18 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Button from "./Button";
 
 export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
+  const [isMounted, setIsMounted] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const router = useRouter();
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
 
   const items = [
     {

@@ -26,7 +26,6 @@ export default function Card({
             <CardMedia
               className="card-media"
               component="img"
-              alt="green iguana"
               height={height}
               image={imgPath}
             />

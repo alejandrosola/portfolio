@@ -5,6 +5,7 @@ import Card from "./Card";
 import Text from "./Text";
 
 import { useMediaQuery, useTheme } from "@mui/material";
+import { useEffect, useState } from "react";
 
 interface CarouselProps {
   cards: any[];
@@ -17,6 +18,16 @@ export default function Carousel({
 }: CarouselProps) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const height = isMobile ? "550px" : "450px";
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
 
   return (
     <>
@@ -37,10 +48,12 @@ export default function Carousel({
               title={card.title}
               subtitle={card.subtitle}
               imgPath={card.imgPath}
-              height={isMobile ? "550px" : "450px"}
+              height={height}
             >
-              <div>
-                <Text variant="h6">{card.body}</Text>
+              <div key={index}>
+                <Text key={index} variant="h6">
+                  {card.body}
+                </Text>
               </div>
             </Card>
           </div>
