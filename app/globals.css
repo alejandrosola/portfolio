@@ -24,6 +24,9 @@
 }
 
 .button {
+  text-transform: none;
+  font-size: large;
+  font-family: "Courier Prime", monospace !important;
   border-radius: 15%;
   color: var(--light-text-color) !important;
 }
@@ -96,13 +99,23 @@ h2 {
 }
 
 .icon-item {
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
   display: flex;
   background-color: var(--primary-color);
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  font-size: 30px;
+  margin-bottom: 5%;
+}
+
+.knowledge-container {
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  flex-wrap: wrap;
 }
 
 main {

@@ -3,8 +3,29 @@ import Text from "@/components/Text";
 import TextFile from "@/components/TextFile";
 import EmailForm from "@/components/EmailForm";
 import DividerLine from "@/components/DividerLine";
-import SchoolIcon from "@mui/icons-material/School";
-import { Box } from "@mui/material";
+import { Box, Tooltip } from "@mui/material";
+import {
+  FaJs,
+  FaPython,
+  FaHtml5,
+  FaCss3Alt,
+  FaGitAlt,
+  FaTrello,
+  FaAngular,
+  FaReact,
+  FaVuejs,
+  FaNodeJs,
+} from "react-icons/fa";
+import { RiJavaLine, RiNextjsFill } from "react-icons/ri";
+import {
+  SiPostgresql,
+  SiNestjs,
+  SiFlask,
+  SiSpring,
+  SiMongodb,
+  SiMinio,
+} from "react-icons/si";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const educations = [
@@ -54,13 +75,6 @@ export default function Home() {
       body: "Desarrollador fullstack de una página web con Flask, Vue y MongoDB",
       imgPath: "/unpsjb.png",
     },
-  ];
-
-  const knowledge = [
-    <SchoolIcon />,
-    <SchoolIcon />,
-    <SchoolIcon />,
-    <SchoolIcon />,
   ];
 
   const descriptionSection = (
@@ -117,13 +131,113 @@ export default function Home() {
     </>
   );
 
+  const knowledge = [
+    {
+      icon: <FaHtml5 />,
+      color: "#e5522c",
+      tooltip: "HTML5",
+    },
+    {
+      icon: <FaCss3Alt />,
+      color: "#2d53e5",
+      tooltip: "CSS",
+    },
+    {
+      icon: <FaGitAlt />,
+      color: "#f35825",
+      tooltip: "Git",
+    },
+    {
+      icon: <FaTrello />,
+      color: "#0884cd",
+      tooltip: "Trello",
+    },
+    {
+      icon: <SiPostgresql />,
+      color: "#396c94",
+      tooltip: "PostgreSQL",
+    },
+    {
+      icon: <SiNestjs />,
+      color: "#e12a54",
+      tooltip: "NestJS",
+    },
+    {
+      icon: <SiFlask />,
+      color: "#000000",
+      tooltip: "Flask",
+    },
+    {
+      icon: <SiSpring />,
+      color: "#6eb931",
+      tooltip: "Spring",
+    },
+    {
+      icon: <SiMongodb />,
+      color: "#6fad4c",
+      tooltip: "MongoDB",
+    },
+    {
+      icon: <SiMinio />,
+      color: "#c8324d",
+      tooltip: "MinIO",
+    },
+    {
+      icon: <RiNextjsFill />,
+      color: "#000000",
+      tooltip: "NextJS",
+    },
+    {
+      icon: <FaAngular />,
+      color: "#de0837",
+      tooltip: "Angular",
+    },
+    {
+      icon: <FaReact />,
+      color: "#08d9ff",
+      tooltip: "React",
+    },
+    {
+      icon: <FaVuejs />,
+      color: "#47ba87",
+      tooltip: "Vue.js",
+    },
+    {
+      icon: <FaNodeJs />,
+      color: "#58a149",
+      tooltip: "NodeJS",
+    },
+    {
+      icon: <FaJs />,
+      color: "#f1dc55",
+      tooltip: "Javascript",
+    },
+    {
+      icon: <FaPython />,
+      color: "#3c78a8",
+      tooltip: "Python",
+    },
+    {
+      icon: <RiJavaLine />,
+      color: "#dc3e16",
+      tooltip: "Java",
+    },
+  ];
+
   const knowledgeSection = (
     <>
       <div id="contact">
         <Text variant="h2">Conocimientos</Text>
-        <Box style={{ display: "flex", justifyContent: "center", gap: "5%" }}>
-          {knowledge.map((item) => (
-            <Box className="icon-item">{item}</Box>
+        <Box className="knowledge-container">
+          {knowledge.map((item, index) => (
+            <Tooltip key={index} title={item.tooltip}>
+              <Box
+                className="icon-item"
+                style={{ backgroundColor: item.color }}
+              >
+                {item.icon}
+              </Box>
+            </Tooltip>
           ))}
         </Box>
       </div>
