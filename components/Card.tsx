@@ -7,6 +7,7 @@ interface CardProps {
   subtitle?: string;
   children: any;
   height: string;
+  link?: string;
 }
 
 export default function Card({
@@ -15,7 +16,11 @@ export default function Card({
   subtitle,
   children,
   height,
+  link,
 }: CardProps) {
+  function openLink(link: string): any {
+    window.open(link, "_blank");
+  }
   return (
     <MuiCard style={{ height: height }} className="card-container">
       <div style={{ margin: "6%" }}>
@@ -28,6 +33,8 @@ export default function Card({
               component="img"
               height={height}
               image={imgPath}
+              onClick={() => (link ? openLink(link) : {})}
+              style={{ cursor: link ? "pointer" : "" }}
             />
           </div>
         )}

@@ -48,6 +48,7 @@ export default function Carousel({
               title={card.title}
               subtitle={card.subtitle}
               imgPath={card.imgPath}
+              link={card.link}
               height={height}
             >
               <div key={index}>

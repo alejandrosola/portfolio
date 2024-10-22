@@ -25,7 +25,6 @@ import {
   SiMongodb,
   SiMinio,
 } from "react-icons/si";
-import { useRouter } from "next/router";
 
 export default function Home() {
   const educations = [
@@ -34,24 +33,28 @@ export default function Home() {
       subtitle: "Universidad Nacional de la Patagonia San Juan Bosco",
       body: "Actualmente cursando el 4to año de la Licenciatura en Informática. 18 materias aprobadas, 66.67% de avance.",
       imgPath: "/unpsjb.png",
+      link: "https://www.unp.edu.ar/ingenieria/index.php/es/?view=article&id=381:licenciatura-en-informatica&catid=70:carreras-contenido",
     },
     {
       title: "Analista Programador Universitario",
       subtitle: "Universidad Nacional de la Patagonia San Juan Bosco",
       body: "Recibido de la carrera en marzo de 2024.",
       imgPath: "/unpsjb.png",
+      link: "https://www.unp.edu.ar/ingenieria/index.php/es/?view=article&id=380:analista-programador-universitario&catid=70:carreras-contenido",
     },
     {
       title: "CS50 - Introduction to Computer Science",
       subtitle: "Universidad de Harvard",
       body: "Curso realizado en 2020.",
       imgPath: "/cs50.png",
+      link: "https://pll.harvard.edu/course/cs50-introduction-computer-science",
     },
     {
       title: "CS50 - Introduction to Artificial Intelligence",
       subtitle: "Universidad de Harvard",
       body: "Curso realizado en 2023.",
       imgPath: "/cs50.png",
+      link: "https://pll.harvard.edu/course/cs50s-introduction-artificial-intelligence-python",
     },
   ];
 
@@ -59,21 +62,23 @@ export default function Home() {
     {
       title: "Mapa Interactivo Cultural",
       subtitle: "Pasantía remunerada - CAMAD",
-      body: "Pasantía de una aplicación de blablabla",
-      imgPath: "/cs50.png",
+      body: "MIC - Mapa Interactivo Cultural es una app para que la cultura, el deporte y el turismo esté en tus manos en un sólo lugar, promoviendo los consumos culturales de tu ciudad.",
+      imgPath: "/mic.png",
+      link: "https://mapainteractivocultural.ar",
     },
     {
       title: "Auxiliar alumno",
       subtitle:
         "Programación Orientada a Objetos - Licenciatura en informática",
-      body: "Auxiliar en la materia blablabla",
+      body: "Auxiliar alumno en la materia Programación Orientada a Objetos dictada en el segundo año de la Licenciatura en informática",
       imgPath: "/unpsjb.png",
     },
     {
-      title: "CVA Magazine",
+      title: "CVA Gaming",
       subtitle: "Desarrollador Fullstack",
-      body: "Desarrollador fullstack de una página web con Flask, Vue y MongoDB",
-      imgPath: "/unpsjb.png",
+      body: "CVA Gaming es una plataforma web de apuestas online. Desarrollada  con Flask, Vue y MongoDB",
+      imgPath: "/cva.png",
+      link: "https://cvagaming.com.ar",
     },
   ];
 

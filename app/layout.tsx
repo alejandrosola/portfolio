@@ -23,7 +23,6 @@ export default function RootLayout({
           sx={{
             display: "grid",
             gridTemplateColumns: { sm: `${drawerWidth}px 1fr` },
-            gridTemplateRows: "60px",
             height: "100vh",
           }}
         >
