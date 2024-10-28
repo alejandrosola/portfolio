@@ -4,27 +4,9 @@ import TextFile from "@/components/TextFile";
 import EmailForm from "@/components/EmailForm";
 import DividerLine from "@/components/DividerLine";
 import { Box, Tooltip } from "@mui/material";
-import {
-  FaJs,
-  FaPython,
-  FaHtml5,
-  FaCss3Alt,
-  FaGitAlt,
-  FaTrello,
-  FaAngular,
-  FaReact,
-  FaVuejs,
-  FaNodeJs,
-} from "react-icons/fa";
-import { RiJavaLine, RiNextjsFill } from "react-icons/ri";
-import {
-  SiPostgresql,
-  SiNestjs,
-  SiFlask,
-  SiSpring,
-  SiMongodb,
-  SiMinio,
-} from "react-icons/si";
+import Timeline from "@/components/Timeline";
+import stack from "./utils/stackIcons";
+import RoundIcon from "@/components/RoundIcon";
 
 export default function Home() {
   const educations = [
@@ -58,27 +40,45 @@ export default function Home() {
     },
   ];
 
+  /* Maquetado de paginas web mediante el uso de Wordpress. (DIVI, Elementor, Woocomerce). Maquetado responsive de Sitios web. 
+  (HTML, CSS, Javascript,Bootstrap, React.js, Tailwind.css). Uso de Git/GitLab. Maquetado de email marketing. */
+
   const experiences = [
     {
-      title: "Mapa Interactivo Cultural",
+      title: "Desarrollador fullstack - MIC",
       subtitle: "Pasantía remunerada - CAMAD",
+      time: "Agosto 2023 - Diciembre 2023",
       body: "MIC - Mapa Interactivo Cultural es una app para que la cultura, el deporte y el turismo esté en tus manos en un sólo lugar, promoviendo los consumos culturales de tu ciudad.",
+      stack: [
+        "NextJS",
+        "NestJS",
+        "Javascript",
+        "Typescript",
+        "PostgreSQL",
+        "MinIO",
+        "Git",
+        "Scrum",
+      ],
       imgPath: "/mic.png",
       link: "https://mapainteractivocultural.ar",
     },
     {
+      title: "Desarrollador fullstack - CVA Gaming",
+      time: "Marzo 2024 - Septiembre 2024",
+      subtitle: "Desarrollador Fullstack",
+      body: "CVA Gaming es una plataforma web de apuestas online. Desarrollada  con Flask, Vue y MongoDB",
+      stack: ["Flask", "Vue", "Python", "Javascript", "Mongodb", "Git"],
+      imgPath: "/cva.png",
+      link: "https://cvagaming.com.ar",
+    },
+    {
       title: "Auxiliar alumno",
+      time: "Septiembre 2023 - Actualidad",
       subtitle:
         "Programación Orientada a Objetos - Licenciatura en informática",
       body: "Auxiliar alumno en la materia Programación Orientada a Objetos dictada en el segundo año de la Licenciatura en informática",
+      stack: ["Java", "Git"],
       imgPath: "/unpsjb.png",
-    },
-    {
-      title: "CVA Gaming",
-      subtitle: "Desarrollador Fullstack",
-      body: "CVA Gaming es una plataforma web de apuestas online. Desarrollada  con Flask, Vue y MongoDB",
-      imgPath: "/cva.png",
-      link: "https://cvagaming.com.ar",
     },
   ];
 
@@ -121,7 +121,8 @@ export default function Home() {
           display: "flex",
         }}
       >
-        <Carousel cards={experiences} />
+        <Timeline items={experiences} />
+        {/* <Carousel cards={experiences} /> */}
       </div>
     </>
   );
@@ -138,94 +139,94 @@ export default function Home() {
 
   const knowledge = [
     {
-      icon: <FaHtml5 />,
-      color: "#e5522c",
-      tooltip: "HTML5",
+      icon: stack["nextjs"].icon,
+      color: stack["nextjs"].color,
+      tooltip: stack["nextjs"].tooltip,
     },
     {
-      icon: <FaCss3Alt />,
-      color: "#2d53e5",
-      tooltip: "CSS",
+      icon: stack["nestjs"].icon,
+      color: stack["nestjs"].color,
+      tooltip: stack["nestjs"].tooltip,
     },
     {
-      icon: <FaGitAlt />,
-      color: "#f35825",
-      tooltip: "Git",
+      icon: stack["java"].icon,
+      color: stack["java"].color,
+      tooltip: stack["java"].tooltip,
     },
     {
-      icon: <FaTrello />,
-      color: "#0884cd",
-      tooltip: "Trello",
+      icon: stack["html"].icon,
+      color: stack["html"].color,
+      tooltip: stack["html"].tooltip,
     },
     {
-      icon: <SiPostgresql />,
-      color: "#396c94",
-      tooltip: "PostgreSQL",
+      icon: stack["css"].icon,
+      color: stack["css"].color,
+      tooltip: stack["css"].tooltip,
     },
     {
-      icon: <SiNestjs />,
-      color: "#e12a54",
-      tooltip: "NestJS",
+      icon: stack["git"].icon,
+      color: stack["git"].color,
+      tooltip: stack["git"].tooltip,
     },
     {
-      icon: <SiFlask />,
-      color: "#000000",
-      tooltip: "Flask",
+      icon: stack["scrum"].icon,
+      color: stack["scrum"].color,
+      tooltip: stack["scrum"].tooltip,
     },
     {
-      icon: <SiSpring />,
-      color: "#6eb931",
-      tooltip: "Spring",
+      icon: stack["postgresql"].icon,
+      color: stack["postgresql"].color,
+      tooltip: stack["postgresql"].tooltip,
     },
     {
-      icon: <SiMongodb />,
-      color: "#6fad4c",
-      tooltip: "MongoDB",
+      icon: stack["flask"].icon,
+      color: stack["flask"].color,
+      tooltip: stack["flask"].tooltip,
     },
     {
-      icon: <SiMinio />,
-      color: "#c8324d",
-      tooltip: "MinIO",
+      icon: stack["spring"].icon,
+      color: stack["spring"].color,
+      tooltip: stack["spring"].tooltip,
     },
     {
-      icon: <RiNextjsFill />,
-      color: "#000000",
-      tooltip: "NextJS",
+      icon: stack["mongodb"].icon,
+      color: stack["mongodb"].color,
+      tooltip: stack["mongodb"].tooltip,
     },
     {
-      icon: <FaAngular />,
-      color: "#de0837",
-      tooltip: "Angular",
+      icon: stack["minio"].icon,
+      color: stack["minio"].color,
+      tooltip: stack["minio"].tooltip,
     },
     {
-      icon: <FaReact />,
-      color: "#08d9ff",
-      tooltip: "React",
+      icon: stack["angular"].icon,
+      color: stack["angular"].color,
+      tooltip: stack["angular"].tooltip,
     },
     {
-      icon: <FaVuejs />,
-      color: "#47ba87",
-      tooltip: "Vue.js",
+      icon: stack["react"].icon,
+      color: stack["react"].color,
+      tooltip: stack["react"].tooltip,
     },
     {
-      icon: <FaNodeJs />,
-      color: "#58a149",
-      tooltip: "NodeJS",
+      icon: stack["vue"].icon,
+      color: stack["vue"].color,
+      tooltip: stack["vue"].tooltip,
     },
     {
-      icon: <FaJs />,
-      color: "#f1dc55",
-      tooltip: "Javascript",
+      icon: stack["nodejs"].icon,
+      color: stack["nodejs"].color,
+      tooltip: stack["nodejs"].tooltip,
     },
     {
-      icon: <FaPython />,
-      color: "#3c78a8",
-      tooltip: "Python",
+      icon: stack["javascript"].icon,
+      color: stack["javascript"].color,
+      tooltip: stack["javascript"].tooltip,
     },
     {
-      icon: <RiJavaLine />,
-      color: "#dc3e16",
-      tooltip: "Java",
+      icon: stack["python"].icon,
+      color: stack["javascript"].color,
+      tooltip: stack["javascript"].tooltip,
     },
   ];
 
@@ -235,14 +236,7 @@ export default function Home() {
         <Text variant="h2">Conocimientos</Text>
         <Box className="knowledge-container">
           {knowledge.map((item, index) => (
-            <Tooltip key={index} title={item.tooltip}>
-              <Box
-                className="icon-item"
-                style={{ backgroundColor: item.color }}
-              >
-                {item.icon}
-              </Box>
-            </Tooltip>
+            <RoundIcon key={index} item={item} />
           ))}
         </Box>
       </div>

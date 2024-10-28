@@ -87,6 +87,12 @@ h2 {
   object-fit: fill;
 }
 
+.timeline-media {
+  width: auto;
+  height: 50px !important;
+  object-fit: fill;
+}
+
 .card-container {
   background-color: var(--dark-color);
   border-radius: 25px;
@@ -116,6 +122,13 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 5%;
+  flex-wrap: wrap;
+}
+
+.stack-container {
+  margin-top: 3%;
+  display: flex;
+  gap: 1%;
   flex-wrap: wrap;
 }
 
