@@ -1,5 +1,5 @@
 "use client";
-import { Alert, Box, Snackbar, TextField } from "@mui/material";
+import { Alert, Box, Snackbar, Stack, TextField } from "@mui/material";
 import Text from "./Text";
 import Button from "./Button";
 import { useState } from "react";
@@ -10,6 +10,8 @@ export default function EmailForm({}: EmailFormProps) {
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
   const [snackOpen, setSnackOpen] = useState(false);
+  const [bodyError, setBodyError] = useState(false);
+  const [subjectError, setSubjectError] = useState(false);
 
   const handleSubjectChange = (event: any) => {
     setSubject(event.target.value);
@@ -20,7 +22,19 @@ export default function EmailForm({}: EmailFormProps) {
   };
 
   const sendEmail = async () => {
-    /* const response = await fetch("/api/sendEmail", {
+    let ret = false;
+    if (subject == "") {
+      setSubjectError(true);
+      ret = true;
+    }
+
+    if (body == "") {
+      setBodyError(true);
+      ret = true;
+    }
+
+    if (ret) return;
+    const response = await fetch("/api/sendEmail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +49,7 @@ export default function EmailForm({}: EmailFormProps) {
 
     if (!response.ok) {
       console.error("Error al enviar el email");
-    } */
+    }
     setSnackOpen(true);
   };
 
@@ -59,6 +73,25 @@ export default function EmailForm({}: EmailFormProps) {
         value={subject}
         onChange={handleSubjectChange}
       />
+      <Snackbar
+        open={bodyError}
+        autoHideDuration={6000}
+        onClose={() => setBodyError(false)}
+      >
+        <Alert severity="error" sx={{ width: "100%" }}>
+          Cuerpo requerido
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={subjectError}
+        autoHideDuration={6000}
+        onClose={() => setSubjectError(false)}
+      >
+        <Alert severity="error" sx={{ width: "100%" }}>
+          Asunto requerido
+        </Alert>
+      </Snackbar>
+
       <TextField
         fullWidth
         multiline
