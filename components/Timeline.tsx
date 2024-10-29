@@ -68,7 +68,7 @@ export default function Timeline({ items }: TimelineProps) {
                         item={stack[stackItem.toLowerCase()]}
                       />
                     ) : (
-                      <></>
+                      <div key={stackItemIndex}></div>
                     )
                 )}
               </Box>

@@ -18,6 +18,7 @@ import {
   SiSpring,
   SiMongodb,
   SiMinio,
+  SiTypescript,
 } from "react-icons/si";
 import { DiScrum } from "react-icons/di";
 
@@ -44,6 +45,11 @@ const stack: {
   vue: { icon: <FaVuejs />, color: "#47ba87", tooltip: "VueJS" },
   nodejs: { icon: <FaNodeJs />, color: "#58a149", tooltip: "NodeJS" },
   javascript: { icon: <FaJs />, color: "#f1dc55", tooltip: "Javascript" },
+  typescript: {
+    icon: <SiTypescript />,
+    color: "#377cc8",
+    tooltip: "TypeScript",
+  },
   python: { icon: <FaPython />, color: "#3c78a8", tooltip: "Python" },
   java: { icon: <RiJavaLine />, color: "#dc3e16", tooltip: "Java" },
 };

@@ -224,6 +224,11 @@ export default function Home() {
       tooltip: stack["javascript"].tooltip,
     },
     {
+      icon: stack["typescript"].icon,
+      color: stack["typescript"].color,
+      tooltip: stack["typescript"].tooltip,
+    },
+    {
       icon: stack["python"].icon,
       color: stack["javascript"].color,
       tooltip: stack["javascript"].tooltip,
