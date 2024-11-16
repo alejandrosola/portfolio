@@ -1,5 +1,5 @@
 "use client";
-import { Alert, Box, Snackbar, Stack, TextField } from "@mui/material";
+import { Alert, Box, Snackbar, TextField } from "@mui/material";
 import Text from "./Text";
 import Button from "./Button";
 import { useState } from "react";
@@ -10,6 +10,10 @@ export default function EmailForm({}: EmailFormProps) {
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
   const [snackOpen, setSnackOpen] = useState(false);
+  const [snackMessage, setSnackMessage] = useState("");
+  const [snackSeverity, setSnackSeverity] = useState<"error" | "success">(
+    "success"
+  );
   const [bodyError, setBodyError] = useState(false);
   const [subjectError, setSubjectError] = useState(false);
 
@@ -47,8 +51,14 @@ export default function EmailForm({}: EmailFormProps) {
       }),
     });
 
+    const data = await response.json();
+
+    setSnackMessage("Email enviado con éxito");
+    setSnackSeverity("success");
+
     if (!response.ok) {
-      console.error("Error al enviar el email");
+      setSnackMessage(data.error);
+      setSnackSeverity("error");
     }
     setSnackOpen(true);
   };
@@ -61,8 +71,8 @@ export default function EmailForm({}: EmailFormProps) {
         autoHideDuration={6000}
         onClose={() => setSnackOpen(false)}
       >
-        <Alert severity="success" sx={{ width: "100%" }}>
-          Email enviado con éxito
+        <Alert severity={snackSeverity} sx={{ width: "100%" }}>
+          {snackMessage}
         </Alert>
       </Snackbar>
       <Text variant="h4">Envíame un email</Text>
