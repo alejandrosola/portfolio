@@ -1,14 +1,27 @@
+"use client";
 import Carousel from "@/components/Carousel";
 import Text from "@/components/Text";
 import TextFile from "@/components/TextFile";
 import EmailForm from "@/components/EmailForm";
 import DividerLine from "@/components/DividerLine";
-import { Box, Tooltip } from "@mui/material";
+import { Box, CircularProgress, useMediaQuery, useTheme } from "@mui/material";
+
 import Timeline from "@/components/Timeline";
 import stack from "./utils/stackIcons";
 import RoundIcon from "@/components/RoundIcon";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
+
   const educations = [
     {
       title: "Licenciatura en Informática",
@@ -39,9 +52,6 @@ export default function Home() {
       link: "https://pll.harvard.edu/course/cs50s-introduction-artificial-intelligence-python",
     },
   ];
-
-  /* Maquetado de paginas web mediante el uso de Wordpress. (DIVI, Elementor, Woocomerce). Maquetado responsive de Sitios web. 
-  (HTML, CSS, Javascript,Bootstrap, React.js, Tailwind.css). Uso de Git/GitLab. Maquetado de email marketing. */
 
   const experiences = [
     {
@@ -84,19 +94,37 @@ export default function Home() {
 
   const descriptionSection = (
     <>
+      {isMobile && (
+        <div
+          style={{
+            justifyContent: "center",
+            display: "flex",
+            marginTop: "-10%",
+            marginBottom: "-10%",
+          }}
+        >
+          <img
+            className="profile-img"
+            alt="Profile picture"
+            src="/profile.jpg"
+          />
+        </div>
+      )}
       <div style={{ marginTop: "2%" }}>
-        <Text variant="h2">Desarrollador Fullstack</Text>
+        <Text variant="h2">Hola! Soy Alejandro Solá</Text>
       </div>
-      <Text variant="h4"> Hola! Soy Alejandro Solá </Text>
       <Text variant="h6" justify={true}>
-        <TextFile filename="/public/description.txt" />
+        <b style={{ fontSize: "1.6 rem" }}>+1 años de experiencia </b>{" "}
+        trabajando como desarrollador fullstack en pasantías y empresas. En
+        constante aprendizaje de nuevas tecnologías. Mi objetivo es seguir
+        creciendo profesionalmente en el mundo de la informática.
       </Text>
     </>
   );
 
   const educationSection = (
     <>
-      <div id="education">
+      <div id="education" className="section">
         <Text variant="h2">Formación</Text>
       </div>
       <div
@@ -112,7 +140,7 @@ export default function Home() {
 
   const experienceSection = (
     <>
-      <div id="experience">
+      <div id="experience" className="section">
         <Text variant="h2">Experiencia</Text>
       </div>
       <div
@@ -122,7 +150,6 @@ export default function Home() {
         }}
       >
         <Timeline items={experiences} />
-        {/* <Carousel cards={experiences} /> */}
       </div>
     </>
   );
@@ -131,7 +158,6 @@ export default function Home() {
     <>
       <div id="contact">
         <Text variant="h2">Contacto</Text>
-
         <EmailForm />
       </div>
     </>
@@ -255,11 +281,11 @@ export default function Home() {
 
         <DividerLine />
 
-        {educationSection}
+        {experienceSection}
 
         <DividerLine />
 
-        {experienceSection}
+        {educationSection}
 
         <DividerLine />
 

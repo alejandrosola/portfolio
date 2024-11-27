@@ -41,14 +41,14 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
 
   const items = [
     {
-      name: "Formación",
-      icon: <SchoolIcon />,
-      handleClick: () => redirectTo("/#education"),
-    },
-    {
       name: "Experiencia",
       icon: <WorkIcon />,
       handleClick: () => redirectTo("/#experience"),
+    },
+    {
+      name: "Formación",
+      icon: <SchoolIcon />,
+      handleClick: () => redirectTo("/#education"),
     },
     {
       name: "Contacto",
