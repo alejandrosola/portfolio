@@ -106,7 +106,7 @@ export default function Home() {
           <img
             className="profile-img"
             alt="Profile picture"
-            src="/profile.jpg"
+            src="/profile.png"
           />
         </div>
       )}

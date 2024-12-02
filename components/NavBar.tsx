@@ -43,17 +43,17 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
     {
       name: "Experiencia",
       icon: <WorkIcon />,
-      handleClick: () => redirectTo("/#experience"),
+      handleClick: () => scrollTo("experience"),
     },
     {
       name: "Formación",
       icon: <SchoolIcon />,
-      handleClick: () => redirectTo("/#education"),
+      handleClick: () => scrollTo("education"),
     },
     {
       name: "Contacto",
       icon: <AccountBoxIcon />,
-      handleClick: () => redirectTo("/#contact"),
+      handleClick: () => scrollTo("contact"),
     },
     {
       name: "LinkedIn",
@@ -76,6 +76,13 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
     router.push(path);
     setDrawerOpen(false);
   }
+
+  function scrollTo(section: string): any {
+    const pageSection = document.getElementById(section);
+    if (pageSection) pageSection.scrollIntoView({ behavior: "smooth" });
+    setDrawerOpen(false);
+  }
+
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
   };
@@ -106,7 +113,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
               style={{ marginTop: isMobile ? "35%" : "15%" }}
               onClick={() => redirectTo("/")}
               className="profile-img"
-              src="/profile.jpg"
+              src="/profile.png"
               alt="Profile picture"
             />
           </div>
