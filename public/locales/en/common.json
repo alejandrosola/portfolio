@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "experience": "Experience",
+    "education": "Education",
+    "contact": "Contact",
+    "technologies": "Technologies"
+  },
+  "home": {
+    "introduction": {
+      "title": "Hi! I'm Alejandro Solá.",
+      "years": "+1 years of experience ",
+      "body": "working as a fullstack developer in internships and companies. Constantly learning new technologies. My goal is to continue growing professionally in the world of computer science."
+    },
+    "experiences": {
+      "visit": "Visit",
+      "mic": {
+        "title": "Fullstack Developer - MIC",
+        "subtitle": "Paid Internship - CAMAD",
+        "time": "August 2023 - Dicember 2023",
+        "body": "MIC - Interactive Cultural Map is an app that gets culture, sport and tourism in your hands in one place, promoting cultural consumption in your city."
+      },
+      "cva": {
+        "title": "Fullstack Developer - CVA Gaming",
+        "subtitle": "",
+        "time": "March 2024 - September 2024",
+        "body": "CVA Gaming is an online casino web platform."
+      },
+      "poo": {
+        "title": "Student Assistant",
+        "subtitle": "Object Oriented Programming - Bachelor of Computer Science",
+        "time": "September 2023 - December 2024",
+        "body": "Student assistant in the subject Object Oriented Programming taught in the second year of the Bachelor's Degree in Computer Science"
+      },
+      "entranceCourse": {
+        "title": "Student Assistant",
+        "subtitle": "Integrated Admission Cycle - Bachelor of Computer Science",
+        "time": "February 2025 - March 2025",
+        "body": "Paid student assistant in the Integrated Admission Cycle"
+      }
+    },
+    "educations": {
+      "computerScience": {
+        "title": "Computer Science Degree",
+        "subtitle": "National University of Patagonia San Juan Bosco",
+        "body": "Currently studying the 5th and last year of the Bachelor's Degree in Computer Science. 26 subjects passed, 78.79% progress."
+      },
+      "analystProgrammer": {
+        "title": "University Analyst Programmer",
+        "subtitle": "National University of Patagonia San Juan Bosco",
+        "body": "Graduated in March 2024"
+      },
+      "cs50Introduction": {
+        "title": "CS50 - Introduction to Computer Science",
+        "subtitle": "Harvard University",
+        "body": "Course completed in 2020."
+      },
+      "cs50Ai": {
+        "title": "CS50 - Introduction to Artificial Intelligence",
+        "subtitle": "Harvard University",
+        "body": "Course completed in 2023."
+      }
+    }
+  },
+  "emailForm": {
+    "title": "Send me an email!",
+    "email": "Email",
+    "subject": "Subject",
+    "body": "Body",
+    "emailRequired": "Email required",
+    "invalidEmail": "Invalid email",
+    "subjectRequired": "Subject required",
+    "bodyRequired": "Body required",
+    "sentSuccessfully": "Email sent successfully!",
+    "send": "Send"
+  }
+}

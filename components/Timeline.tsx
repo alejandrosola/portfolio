@@ -14,6 +14,7 @@ import Button from "./Button";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import RoundIcon from "./RoundIcon";
 import stack from "@/app/utils/stackIcons";
+import { useTranslations } from "next-intl";
 
 interface TimelineProps {
   items: any[];
@@ -25,6 +26,7 @@ export default function Timeline({ items }: TimelineProps) {
 
   const [isMounted, setIsMounted] = useState(false);
 
+  const t = useTranslations("home");
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -49,6 +51,7 @@ export default function Timeline({ items }: TimelineProps) {
             </TimelineSeparator>
             <TimelineContent>
               <Text variant="h4">{item.title}</Text>
+              <Text variant="h5">{item.subtitle}</Text>
               <img className="timeline-media" src={item.imgPath} />
               <div>
                 <Text variant="h5">{item.time}</Text>
@@ -56,7 +59,7 @@ export default function Timeline({ items }: TimelineProps) {
               <Text variant="h6">{item.body}</Text>
               {item.link && (
                 <Button onClick={() => window.open(item.link, "_blank")}>
-                  Visitar <KeyboardArrowRightIcon />
+                  {t("experiences.visit")} <KeyboardArrowRightIcon />
                 </Button>
               )}
               <Box className="stack-container">

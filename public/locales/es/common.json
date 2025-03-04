@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "experience": "Experiencia",
+    "education": "Formación",
+    "contact": "Contacto",
+    "technologies": "Tecnologías"
+  },
+  "home": {
+    "introduction": {
+      "title": "Hola! Soy Alejandro Solá.",
+      "years": "+1 años de experiencia ",
+      "body": "trabajando como desarrollador fullstack en pasantías y empresas. Constantemente aprendiendo nuevas tecnologías. Mi meta es seguir creciendo profesionalmente en el mundo de la informática."
+    },
+    "experiences": {
+      "visit": "Visitar",
+      "mic": {
+        "title": "Desarrollador fullstack - MIC",
+        "subtitle": "Pasantía remunerada - CAMAD",
+        "time": "Agosto 2023 - Diciembre 2023",
+        "body": "MIC - Mapa Interactivo Cultural es una app para que la cultura, el deporte y el turismo esté en tus manos en un sólo lugar, promoviendo los consumos culturales de tu ciudad."
+      },
+      "cva": {
+        "title": "Desarrollador fullstack - CVA Gaming",
+        "subtitle": "",
+        "time": "Marzo 2024 - Septiembre 2024",
+        "body": "CVA Gaming es una plataforma web de apuestas online."
+      },
+      "poo": {
+        "title": "Auxiliar alumno",
+        "subtitle": "Programación Orientada a Objetos - Licenciatura en Informática",
+        "time": "Septiembre 2023 - Diciembre 2024",
+        "body": "Auxiliar alumno en la materia Programación Orientada a Objetos dictada en el segundo año de la Licenciatura en informática"
+      },
+      "entranceCourse": {
+        "title": "Auxiliar alumno",
+        "subtitle": "Ciclo Integrado de Ingreso - Licenciatura en Informática",
+        "time": "Febrero 2025 - Marzo 2025",
+        "body": "Auxiliar alumno remunerado en el Ciclo Integrado de Ingreso"
+      }
+    },
+    "educations": {
+      "computerScience": {
+        "title": "Licenciatura en Informática",
+        "subtitle": "Universidad Nacional de la Patagonia San Juan Bosco",
+        "body": "Actualmente cursando el 5to y último año de la carrera. 26 materias aprobadas, 78.79% de progreso."
+      },
+      "analystProgrammer": {
+        "title": "Analista Programador Universitario",
+        "subtitle": "Universidad Nacional de la Patagonia San Juan Bosco",
+        "body": "Recibido en Marzo de 2024"
+      },
+      "cs50Introduction": {
+        "title": "CS50 - Introduction to Computer Science",
+        "subtitle": "Universidad de Harvard",
+        "body": "Curso finalizado en 2020."
+      },
+      "cs50Ai": {
+        "title": "CS50 - Introduction to Artificial Intelligence",
+        "subtitle": "Universidad de Harvard",
+        "body": "Curso finalizado en 2023."
+      }
+    }
+  },
+  "emailForm": {
+    "title": "Envíame un email!",
+    "email": "Email",
+    "subject": "Asunto",
+    "body": "Cuerpo",
+    "emailRequired": "Email requerido",
+    "invalidEmail": "Email inválido",
+    "subjectRequired": "Asunto requerido",
+    "bodyRequired": "Cuerpo requerido",
+    "sentSuccessfully": "Email enviado con éxito!",
+    "send": "Enviar"
+  }
+}

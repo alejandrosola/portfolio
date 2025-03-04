@@ -10,11 +10,14 @@ import Timeline from "@/components/Timeline";
 import stack from "./utils/stackIcons";
 import RoundIcon from "@/components/RoundIcon";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [isMounted, setIsMounted] = useState(false);
+  const t = useTranslations("home");
+  const sectionsT = useTranslations("sections");
 
   useEffect(() => {
     setIsMounted(true);
@@ -24,30 +27,30 @@ export default function Home() {
 
   const educations = [
     {
-      title: "Licenciatura en Informática",
-      subtitle: "Universidad Nacional de la Patagonia San Juan Bosco",
-      body: "Actualmente cursando el 4to año de la Licenciatura en Informática. 18 materias aprobadas, 66.67% de avance.",
+      title: t("educations.computerScience.title"),
+      subtitle: t("educations.computerScience.subtitle"),
+      body: t("educations.computerScience.body"),
       imgPath: "/unpsjb.png",
       link: "https://www.unp.edu.ar/ingenieria/index.php/es/?view=article&id=381:licenciatura-en-informatica&catid=70:carreras-contenido",
     },
     {
-      title: "Analista Programador Universitario",
-      subtitle: "Universidad Nacional de la Patagonia San Juan Bosco",
-      body: "Recibido de la carrera en marzo de 2024.",
+      title: t("educations.analystProgrammer.title"),
+      subtitle: t("educations.analystProgrammer.subtitle"),
+      body: t("educations.analystProgrammer.body"),
       imgPath: "/unpsjb.png",
       link: "https://www.unp.edu.ar/ingenieria/index.php/es/?view=article&id=380:analista-programador-universitario&catid=70:carreras-contenido",
     },
     {
-      title: "CS50 - Introduction to Computer Science",
-      subtitle: "Universidad de Harvard",
-      body: "Curso realizado en 2020.",
+      title: t("educations.cs50Introduction.title"),
+      subtitle: t("educations.cs50Introduction.subtitle"),
+      body: t("educations.cs50Introduction.body"),
       imgPath: "/cs50.png",
       link: "https://pll.harvard.edu/course/cs50-introduction-computer-science",
     },
     {
-      title: "CS50 - Introduction to Artificial Intelligence",
-      subtitle: "Universidad de Harvard",
-      body: "Curso realizado en 2023.",
+      title: t("educations.cs50Ai.title"),
+      subtitle: t("educations.cs50Ai.subtitle"),
+      body: t("educations.cs50Ai.body"),
       imgPath: "/cs50.png",
       link: "https://pll.harvard.edu/course/cs50s-introduction-artificial-intelligence-python",
     },
@@ -55,10 +58,10 @@ export default function Home() {
 
   const experiences = [
     {
-      title: "Desarrollador fullstack - MIC",
-      subtitle: "Pasantía remunerada - CAMAD",
-      time: "Agosto 2023 - Diciembre 2023",
-      body: "MIC - Mapa Interactivo Cultural es una app para que la cultura, el deporte y el turismo esté en tus manos en un sólo lugar, promoviendo los consumos culturales de tu ciudad.",
+      title: t("experiences.mic.title"),
+      subtitle: t("experiences.mic.subtitle"),
+      time: t("experiences.mic.time"),
+      body: t("experiences.mic.body"),
       stack: [
         "NextJS",
         "NestJS",
@@ -73,21 +76,28 @@ export default function Home() {
       link: "https://mapainteractivocultural.ar",
     },
     {
-      title: "Desarrollador fullstack - CVA Gaming",
-      time: "Marzo 2024 - Septiembre 2024",
-      subtitle: "Desarrollador Fullstack",
-      body: "CVA Gaming es una plataforma web de apuestas online. Desarrollada  con Flask, Vue y MongoDB",
+      title: t("experiences.cva.title"),
+      subtitle: t("experiences.cva.subtitle"),
+      time: t("experiences.cva.time"),
+      body: t("experiences.cva.body"),
       stack: ["Flask", "Vue", "Python", "Javascript", "Mongodb", "Git"],
       imgPath: "/cva.png",
       link: "https://cvagaming.com.ar",
     },
     {
-      title: "Auxiliar alumno",
-      time: "Septiembre 2023 - Actualidad",
-      subtitle:
-        "Programación Orientada a Objetos - Licenciatura en informática",
-      body: "Auxiliar alumno en la materia Programación Orientada a Objetos dictada en el segundo año de la Licenciatura en informática",
+      title: t("experiences.poo.title"),
+      subtitle: t("experiences.poo.subtitle"),
+      time: t("experiences.poo.time"),
+      body: t("experiences.poo.body"),
       stack: ["Java", "Git"],
+      imgPath: "/unpsjb.png",
+    },
+    {
+      title: t("experiences.entranceCourse.title"),
+      subtitle: t("experiences.entranceCourse.subtitle"),
+      time: t("experiences.entranceCourse.time"),
+      body: t("experiences.entranceCourse.body"),
+      stack: [],
       imgPath: "/unpsjb.png",
     },
   ];
@@ -111,13 +121,11 @@ export default function Home() {
         </div>
       )}
       <div style={{ marginTop: "2%" }}>
-        <Text variant="h2">Hola! Soy Alejandro Solá</Text>
+        <Text variant="h2">{t("introduction.title")}</Text>
       </div>
       <Text variant="h6" justify={true}>
-        <b style={{ fontSize: "1.6 rem" }}>+1 años de experiencia </b>{" "}
-        trabajando como desarrollador fullstack en pasantías y empresas. En
-        constante aprendizaje de nuevas tecnologías. Mi objetivo es seguir
-        creciendo profesionalmente en el mundo de la informática.
+        <b style={{ fontSize: "1.6 rem" }}>{t("introduction.years")} </b>
+        {t("introduction.body")}
       </Text>
     </>
   );
@@ -125,7 +133,7 @@ export default function Home() {
   const educationSection = (
     <>
       <div id="education" className="section">
-        <Text variant="h2">Formación</Text>
+        <Text variant="h2">{sectionsT("education")}</Text>
       </div>
       <div
         style={{
@@ -141,7 +149,7 @@ export default function Home() {
   const experienceSection = (
     <>
       <div id="experience" className="section">
-        <Text variant="h2">Experiencia</Text>
+        <Text variant="h2">{sectionsT("experience")}</Text>
       </div>
       <div
         style={{
@@ -157,7 +165,7 @@ export default function Home() {
   const contactSection = (
     <>
       <div id="contact">
-        <Text variant="h2">Contacto</Text>
+        <Text variant="h2">{sectionsT("contact")}</Text>
         <EmailForm />
       </div>
     </>
@@ -263,8 +271,8 @@ export default function Home() {
 
   const knowledgeSection = (
     <>
-      <div id="contact">
-        <Text variant="h2">Conocimientos</Text>
+      <div id="technologies">
+        <Text variant="h2">{sectionsT("technologies")}</Text>
         <Box className="knowledge-container">
           {knowledge.map((item, index) => (
             <RoundIcon key={index} item={item} />

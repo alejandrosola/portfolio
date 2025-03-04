@@ -3,6 +3,7 @@ import { Alert, Box, Snackbar, TextField } from "@mui/material";
 import Text from "./Text";
 import Button from "./Button";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface EmailFormProps {}
 
@@ -15,9 +16,7 @@ export default function EmailForm({}: EmailFormProps) {
   const [snackSeverity, setSnackSeverity] = useState<"error" | "success">(
     "success"
   );
-  const [emailError, setEmailError] = useState(false);
-  const [bodyError, setBodyError] = useState(false);
-  const [subjectError, setSubjectError] = useState(false);
+  const t = useTranslations("emailForm");
 
   const handleEmailChange = (event: any) => {
     setEmail(event.target.value);
@@ -34,28 +33,28 @@ export default function EmailForm({}: EmailFormProps) {
   const sendEmail = async () => {
     if (email == "") {
       setSnackSeverity("error");
-      setSnackMessage("Email requerido");
+      setSnackMessage(t("emailRequired"));
       setSnackOpen(true);
       return;
     }
 
     if (!validEmail(email)) {
       setSnackSeverity("error");
-      setSnackMessage("Email inválido");
+      setSnackMessage(t("invalidEmail"));
       setSnackOpen(true);
       return;
     }
 
     if (subject == "") {
       setSnackSeverity("error");
-      setSnackMessage("Asunto requerido");
+      setSnackMessage(t("subjectRequired"));
       setSnackOpen(true);
       return;
     }
 
     if (body == "") {
       setSnackSeverity("error");
-      setSnackMessage("Cuerpo requerido");
+      setSnackMessage(t("bodyRequired"));
       setSnackOpen(true);
       return;
     }
@@ -78,7 +77,7 @@ export default function EmailForm({}: EmailFormProps) {
 
     const data = await response.json();
 
-    setSnackMessage("Email enviado con éxito");
+    setSnackMessage(t("sentSuccessfully"));
     setSnackSeverity("success");
 
     if (!response.ok) {
@@ -108,12 +107,12 @@ export default function EmailForm({}: EmailFormProps) {
           {snackMessage}
         </Alert>
       </Snackbar>
-      <Text variant="h4">Envíame un email</Text>
+      <Text variant="h4">{t("title")}</Text>
 
       <TextField
         fullWidth
         style={{ marginBottom: "5%" }}
-        placeholder="Email *"
+        placeholder={`${t("email")} *`}
         value={email}
         onChange={handleEmailChange}
       />
@@ -121,7 +120,7 @@ export default function EmailForm({}: EmailFormProps) {
       <TextField
         fullWidth
         style={{ marginBottom: "5%" }}
-        placeholder="Asunto *"
+        placeholder={`${t("subject")} *`}
         value={subject}
         onChange={handleSubjectChange}
       />
@@ -129,12 +128,12 @@ export default function EmailForm({}: EmailFormProps) {
         fullWidth
         multiline
         rows={15}
-        placeholder="Cuerpo... *"
+        placeholder={`${t("body")}... *`}
         style={{ marginBottom: "5%" }}
         value={body}
         onChange={handleBodyChange}
       />
-      <Button onClick={sendEmail}>Enviar</Button>
+      <Button onClick={sendEmail}>{t("send")}</Button>
     </Box>
   );
 }

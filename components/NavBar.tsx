@@ -11,6 +11,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import CodeIcon from "@mui/icons-material/Code";
 import SchoolIcon from "@mui/icons-material/School";
 import WorkIcon from "@mui/icons-material/Work";
 import { useRouter } from "next/navigation";
@@ -24,6 +25,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "./Button";
+import { useTranslations } from "next-intl";
 
 export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
   const [isMounted, setIsMounted] = useState(false);
@@ -32,6 +34,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const t = useTranslations("sections");
 
   useEffect(() => {
     setIsMounted(true);
@@ -41,17 +44,22 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
 
   const items = [
     {
-      name: "Experiencia",
+      name: t("experience"),
       icon: <WorkIcon />,
       handleClick: () => scrollTo("experience"),
     },
     {
-      name: "Formación",
+      name: t("education"),
       icon: <SchoolIcon />,
       handleClick: () => scrollTo("education"),
     },
     {
-      name: "Contacto",
+      name: t("technologies"),
+      icon: <CodeIcon />,
+      handleClick: () => scrollTo("technologies"),
+    },
+    {
+      name: t("contact"),
       icon: <AccountBoxIcon />,
       handleClick: () => scrollTo("contact"),
     },
@@ -78,6 +86,9 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
   }
 
   function scrollTo(section: string): any {
+    if (section == "") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
     const pageSection = document.getElementById(section);
     if (pageSection) pageSection.scrollIntoView({ behavior: "smooth" });
     setDrawerOpen(false);
@@ -111,7 +122,7 @@ export default function NavBar({ drawerWidth }: { drawerWidth: number }) {
           <div>
             <img
               style={{ marginTop: isMobile ? "35%" : "15%" }}
-              onClick={() => redirectTo("/")}
+              onClick={() => scrollTo("")}
               className="profile-img"
               src="/profile.png"
               alt="Profile picture"
